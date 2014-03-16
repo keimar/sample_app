@@ -18,7 +18,7 @@ describe "MicropostPages" do
 
       describe "error messages" do
         before {click_button "Post" }
-        it { should habe_content('error') }
+        it { should have_content('error') }
       end
     end
 
@@ -26,7 +26,7 @@ describe "MicropostPages" do
 
       before { fill_in 'micropost_content', with: "Lorem ipsum" }
       it "should create a micropost" do
-        except {click_button "Post" }.to change(Micropost, :count).by(1)
+        expect {click_button "Post" }.to change(Micropost, :count).by(1)
       end
     end
   end
